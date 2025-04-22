@@ -3,61 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1113353丁泳儷 design: KG 113-12 population</title>
+    <title>高雄市村里級熱圖</title>
     <style>
-        /* 設定主容器，使用彈性盒模型 */
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4fdfb;
+        }
+
         .container {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+            flex-direction: row;
             justify-content: space-between;
-            margin: 20px;
-            border: 1px solid #ccc; /* 卡片邊框 */
-            border-radius: 10px; /* 卡片圓角 */
-            overflow: hidden; /* 確保內容不超出卡片範圍 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片陰影 */
+            padding: 40px;
         }
 
-        /* 左邊的文字樣式 */
-        .text {
-            flex: 1;
-            max-width: 50%; /* 最多占用一半畫面 */
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #f5f5f5; /* 灰色背景 */
+        .description {
+            width: 40%;
+            background-color: #ffffff;
+            border: 2px solid #3399cc;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        /* 右邊的圖表樣式 */
-        .iframe-container {
-            flex: 1;
-            max-width: 50%; /* 最多占用一半畫面 */
-            padding: 20px;
-            box-sizing: border-box;
+        .description h2 {
+            color: #007acc;
+            margin-bottom: 20px;
         }
 
-        /* 自適應設定：小螢幕時調整版面 */
+        .description p {
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .map {
+            width: 55%;
+            border: 2px solid #3399cc;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
         @media (max-width: 768px) {
             .container {
-                flex-direction: column; /* 垂直排列 */
+                flex-direction: column;
+                padding: 20px;
             }
 
-            .text, .iframe-container {
-                max-width: 100%; /* 占滿整個畫面 */
+            .description, .map {
+                width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 左側文字 -->
-        <div class="text">
-            <h1>高雄市村里級熱力圖</h1>
-            <p>點擊縣市的鄉鎮再顯示村里細節，資料以村里為主。</p>
+        <div class="description">
+            <h2>高雄市村里級熱力圖</h2>
         </div>
-
-        <!-- 右側圖表 -->
-        <div class="iframe-container">
-            <iframe src="https://plotdb.io/v/chart/37209" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+        <div class="map">
+            <iframe src="https://plotdb.io/v/chart/37209" allowfullscreen></iframe>
         </div>
     </div>
 </body>
