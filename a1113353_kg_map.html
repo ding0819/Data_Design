@@ -31,6 +31,7 @@
         .description h2 {
             color: #007acc;
             margin-bottom: 20px;
+            text-align: center; /* 標題置中 */
         }
 
         .description p {
@@ -51,10 +52,11 @@
             padding: 10px;
         }
 
-        .map img {
-            max-width: 100%;
-            height: auto;
+        iframe {
+            width: 100%;
+            height: 100%;
             border-radius: 8px;
+            border: none;
         }
 
         @media (max-width: 768px) {
@@ -73,11 +75,11 @@
 <body>
     <div class="container">
         <div class="description">
-            <h2 style="text-align: center;">高雄市村里級熱圖</h2>
+            <h2>高雄市村里級熱圖</h2>
             <p>從這張高雄市村里級人口熱力圖可以觀察到，北部與東部地區的村里人口相對較少，顏色偏向紅色至粉紅色；而西南部與都會區則呈現人口較多的現象，顏色趨近深藍色。整體來看，人口分布呈現出「南多北少、城市密集、郊區稀疏」的趨勢。</p>
         </div>
         <div class="map">
-            <img src="螢幕擷取畫面 2025-04-22 115227.png" alt="高雄市村里級熱圖">
+            <iframe src="https://plotdb.io/v/chart/37209" allowfullscreen="true" frameborder="0"></iframe>
         </div>
     </div>
 </body>
