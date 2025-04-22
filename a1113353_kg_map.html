@@ -4,9 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A1113353丁泳儷 design: KG 113-12 population</title>
+    <style>
+        /* 設定主容器，使用彈性盒模型 */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        /* 左邊的文字樣式 */
+        .text {
+            flex: 1;
+            max-width: 50%; /* 最多占用一半畫面 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 右邊的圖表樣式 */
+        .iframe-container {
+            flex: 1;
+            max-width: 50%; /* 最多占用一半畫面 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 自適應設定：小螢幕時調整版面 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* 垂直排列 */
+            }
+
+            .text, .iframe-container {
+                max-width: 100%; /* 占滿整個畫面 */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>高雄市村里級熱力圖，點擊縣市的鄉鎮再顯示村里細節，資料以村里為主。</h1>
-      <iframe src="https://plotdb.io/v/chart/37209" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    <div class="container">
+        <!-- 左側文字 -->
+        <div class="text">
+            <h1>高雄市村里級熱力圖</h1>
+            <p>點擊縣市的鄉鎮再顯示村里細節，資料以村里為主。</p>
+        </div>
+
+        <!-- 右側圖表 -->
+        <div class="iframe-container">
+            <iframe src="https://plotdb.io/v/chart/37209" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+        </div>
+    </div>
 </body>
 </html>
