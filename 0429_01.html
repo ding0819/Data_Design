@@ -17,12 +17,19 @@
             margin: 20px auto; /* 置中文字框 */
             border-radius: 15px; /* 圓角設置 */
         }
-        .title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 20px;
+        .iframe-box {
+            position: relative;
+            width: 50%; /* 與文字框保持一致 */
+            background-color: #ADD8E6; /* 設定底色 */
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+            margin: 20px auto; /* 置中 */
+            border-radius: 15px; /* 圓角設置 */
+        }
+        .iframe-box iframe {
+            width: 100%; /* 確保 iframe 寬度填滿父容器 */
+            border-radius: 10px; /* 為嵌入的圖表也添加圓角 */
+            border: none; /* 移除 iframe 預設邊框 */
         }
     </style>
 </head>
@@ -32,6 +39,11 @@
         <h2>高雄市65歲-69歲人口互動地圖</h2> 
         鳳山區村里大多都是65-74歲戰老年人口的比例較高，而中正里、成功里及富甲里則是65-74歲和74歲以上的人口比例各占一半。
     </div>
-    <iframe src="https://plotdb.io/v/chart/37351" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    
+    <!-- 包裹 iframe 的底圖框 -->
+    <div class="iframe-box">
+        <iframe src="https://plotdb.io/v/chart/37351" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    </div>
+
 </body>
 </html>
