@@ -9,7 +9,7 @@
             position: relative;
             width: 50%; /* 將寬度設為螢幕的50% */
             text-align: center;
-            background-color: #EBEBE3; /* 設定標題框底色 */
+            background-color: #ADD8E6; /* 設定標題框底色 */
             color: #000000; /* 確保文字顯示 */
             padding: 10px;
             font-size: 16px;
@@ -46,43 +46,51 @@
             padding: 10px; /* 增加內部文字的間距 */
             background-color: #FFFFFF; /* 設定文字背景顏色為白色 */
         }
+        .idea-box {
+            position: relative;
+            width: 50%; /* 寬度設為螢幕的50% */
+            text-align: left; /* 靠左對齊 */
+            background-color: transparent; /* 設定為透明 */
+            border: 18px solid #EBEBE3; /* 邊框顏色與粗細 */
+            color: #000000; /* 確保文字顯示 */
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
+            margin: 20px auto; /* 與其他元素保持間距 */
+            border-radius: 20px; /* 圓角設置 */
+            word-wrap: break-word; /* 確保長字串換行 */
+            overflow: hidden; /* 隱藏溢出內容，確保圓角效果 */
+            display: flex;
+            align-items: center; /* 垂直對齊 */
+            justify-content: space-between; /* 左右對齊 */
+        }
+        .idea-box img {
+            width: 150px; /* 設定圖片寬度 */
+            height: auto; /* 保持圖片比例 */
+            border-radius: 20px; /* 圓角效果 */
+            margin-left: 10px; /* 與文字間距 */
+        }
     </style>
 </head>
 <body>
 
-    <div class="description-box">
-        <h2>高雄市65-69歲人口互動地圖</h2> 
-    </div>
-    <div class="iframe-box">
-        <h3>分析原因</h3> 
-        <p>
-            掌握人口分布特徵： 分析該年齡段的總人口和性別比例，有助於了解不同區域的人口結構特徵。
-            性別差異的影響： 不同性別的人口分布可能反映某些社會現象。
-            老年福利與資源分配： 瞭解65-69歲人口的分布，可以幫助政府更合理地分配資源，例如長照中心、醫療設施和交通服務。
-            性別需求的差異化規劃： 男性與女性可能在健康需求、生活方式和社區活動參與方面有不同的偏好，這需要針對性別特性進行政策設計。
-        </p>
-    </div>
-    <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37351" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
-    </div>
-    <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37455" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
-    </div>
-    <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37444" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
-    </div>
-    <div class="iframe-box">
-        <h3>結論</h3> 
-        <p>
-            南高雄的醫療和交通建設完善，對老年人口的吸引力較大，說明老年人口的分布與基礎設施資源的豐富程度高度相關。
-            偏遠地區因資源相對不足，老年人口選擇居住的意願較低，可能促使這些地區的人口進一步減少。
-            偏遠地區需要更多針對性的政策支持，例如：
-            定期的志工探訪和關懷服務，以彌補親屬或社會資源缺乏的不足。
-            增建老人長照中心，提供基礎的生活照顧與醫療支持，減少因居住偏遠而導致的安全風險。
-            人口密集的都市地區：
-            需要更高效的醫療資源分配，例如規劃照護專車路線，緩解交通壓力，並提高老年人就醫的便利性。
-            偏遠地區老年人口可能面臨更多的生活安全問題，例如獨居老人缺乏及時協助；都市地區的老年人可能更重視健康維護，對醫療與運動設施的需求更高。
-        </p>
+    <div class="idea-box">
+        <div>
+            <h3>集點子</h3>
+            <p>
+                我認為退休後的生活應該是放鬆休息、享受生活的開始，而不是將自己困在家中。
+                事實上，在家鄉有多達39,536位長輩生活能自理、無身心障礙，身體狀況良好，
+                應該要鼓勵他們多走出家門或是到戶外運動、活動筋骨。
+                可以透過社區活動中心定期舉辦一些樂齡活動，如：娛樂遊戲、團體活動、運動競賽等，
+                讓長者在輕鬆氛圍中接觸新事物、結交新朋友；
+                舉辦青銀共融志工活動，讓孩童與長輩互動學習，增進世代交流；
+                安排健走、太極拳等戶外運動，有助維持身體健康與心理平衡。
+                這些活動不僅讓長輩不再覺得自己老了不中用，而是越活越年輕，
+                年紀增長但心不老。
+            </p>
+        </div>
+        <img src="C:\Users\丁泳儷\Pictures\Screenshots\螢幕擷取畫面 2025-05-06 110550.png" alt="相關圖片">
     </div>
 
 </body>
