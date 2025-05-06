@@ -1,71 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Chart</title>
+    <title>高雄市65-69歲人口分析</title>
     <style>
-        .description-box {
-            position: relative;
-            width: 50%; /* 將寬度設為螢幕的50% */
-            text-align: center;
-            background-color: #EBEBE3; /* 設定標題框底色 */
-            color: #000000; /* 確保文字顯示 */
-            padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 20px auto; /* 置中文字框 */
-            border-radius: 20px; /* 圓角設置 */
-            word-wrap: break-word; /* 確保長字串換行 */
-            overflow: auto; /* 如果內容溢出，啟用滾動條 */
-            max-height: 500px; /* 設定最大高度 */
+        body {
+            font-family: Arial, sans-serif;
         }
-        .iframe-box {
-            position: relative;
-            width: 50%; /* 與文字框保持一致 */
-            background-color: transparent; /* 設定為透明 */
-            border: 18px solid #EBEBE3; /* 設定邊框顏色與粗細 */
-            color: #000000; /* 確保文字顯示 */
-            padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
-            margin: 20px auto 20px; /* 與文字框保持間距 */
-            border-radius: 20px; /* 圓角設置 */
-            word-wrap: break-word; /* 確保長字串換行 */
-            overflow: hidden; /* 隱藏溢出內容，確保圓角效果 */
-        }
-        .iframe-box iframe {
-            width: 100%; /* 確保 iframe 寬度填滿父容器 */
-            border-radius: 20px; /* 為嵌入的圖表也添加圓角 */
-            border: none; /* 移除 iframe 預設邊框 */
-        }
-        .iframe-box p, .iframe-box h3 {
-            border-radius: 20px; /* 為內部文字框和標題添加圓角 */
-            padding: 10px; /* 增加內部文字的間距 */
-            background-color: #FFFFFF; /* 設定文字背景顏色為白色 */
-        }
+        .description-box,
+        .iframe-box,
         .idea-box {
             position: relative;
-            width: 50%; /* 寬度設為螢幕的50% */
-            text-align: left; /* 靠左對齊 */
-            background-color: transparent; /* 設定為透明 */
-            border: 18px solid #EBEBE3; /* 邊框顏色與粗細 */
-            color: #000000; /* 確保文字顯示 */
+            width: 50%;
+            margin: 20px auto;
+            border-radius: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .description-box {
+            text-align: center;
+            background-color: #EBEBE3;
             padding: 10px;
             font-size: 16px;
             font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影 */
-            margin: 20px auto; /* 與其他元素保持間距 */
-            border-radius: 20px; /* 圓角設置 */
-            word-wrap: break-word; /* 確保長字串換行 */
-            overflow: hidden; /* 隱藏溢出內容，確保圓角效果 */
         }
-        .idea-box h3, .idea-box p {
-            border-radius: 20px; /* 內部內容圓角 */
-            padding: 10px; /* 增加內部文字間距 */
-            background-color: #FFFFFF; /* 文字背景顏色 */
+
+        .iframe-box {
+            background-color: transparent;
+            border: 18px solid #EBEBE3;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .iframe-box iframe {
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .iframe-box h3,
+        .iframe-box p {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .idea-box {
+            border: 18px solid #EBEBE3;
+            background-color: transparent;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .idea-box h3,
+        .idea-box p {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 10px;
+        }
+
+        .idea-box-content {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .idea-box img {
+            width: 45%;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
         }
     </style>
 </head>
@@ -74,6 +84,7 @@
     <div class="description-box">
         <h2>高雄市65-69歲人口互動地圖</h2> 
     </div>
+
     <div class="iframe-box">
         <h3>分析原因</h3> 
         <p>
@@ -83,15 +94,19 @@
             性別需求的差異化規劃： 男性與女性可能在健康需求、生活方式和社區活動參與方面有不同的偏好，這需要針對性別特性進行政策設計。
         </p>
     </div>
+
     <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37351" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+        <iframe src="https://plotdb.io/v/chart/37351" allowfullscreen="true"></iframe>
     </div>
+
     <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37455" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+        <iframe src="https://plotdb.io/v/chart/37455" allowfullscreen="true"></iframe>
     </div>
+
     <div class="iframe-box">
-       <iframe src="https://plotdb.io/v/chart/37444" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+        <iframe src="https://plotdb.io/v/chart/37444" allowfullscreen="true"></iframe>
     </div>
+
     <div class="iframe-box">
         <h3>結論</h3> 
         <p>
@@ -105,22 +120,23 @@
             偏遠地區老年人口可能面臨更多的生活安全問題，例如獨居老人缺乏及時協助；都市地區的老年人可能更重視健康維護，對醫療與運動設施的需求更高。
         </p>
     </div>
-   <div class="idea-box">
-    <h3>集點子</h3>
-    <div style="display: flex; gap: 20px; align-items: flex-start;">
-        <p style="flex: 1; background-color: #FFFFFF; padding: 10px; border-radius: 20px;">
-            我認為退休後的生活應該是放鬆休息、享受生活的開始，而不是將自己困在家中。
-            事實上，在家鄉有多達39,536位長輩生活能自理、無身心障礙，身體狀況良好，
-            應該要鼓勵他們多走出家門或是到戶外運動、活動筋骨。
-            可以透過社區活動中心定期舉辦一些樂齡活動，如：娛樂遊戲、團體活動、運動競賽等，
-            讓長者在輕鬆氛圍中接觸新事物、結交新朋友；
-            舉辦青銀共融志工活動，讓孩童與長輩互動學習，增進世代交流；
-            安排健走、太極拳等戶外運動，有助維持身體健康與心理平衡。
-            這些活動不僅讓長輩不再覺得自己老了不中用，而是越活越年輕，
-            年紀增長但心不老。
-        </p>
-        <img src="螢幕擷取畫面 2025-05-06 110550.png" alt="相關圖片" style="width: 45%; border-radius: 20px;">
-    </div>
+
+    <div class="idea-box">
+        <h3>集點子</h3>
+        <div class="idea-box-content">
+            <p>
+                我認為退休後的生活應該是放鬆休息、享受生活的開始，而不是將自己困在家中。
+                事實上，在家鄉有多達39,536位長輩生活能自理、無身心障礙，身體狀況良好，
+                應該要鼓勵他們多走出家門或是到戶外運動、活動筋骨。
+                可以透過社區活動中心定期舉辦一些樂齡活動，如：娛樂遊戲、團體活動、運動競賽等，
+                讓長者在輕鬆氛圍中接觸新事物、結交新朋友；
+                舉辦青銀共融志工活動，讓孩童與長輩互動學習，增進世代交流；
+                安排健走、太極拳等戶外運動，有助維持身體健康與心理平衡。
+                這些活動不僅讓長輩不再覺得自己老了不中用，而是越活越年輕，
+                年紀增長但心不老。
+            </p>
+            <img src="集點子.jpg" alt="相關圖片">
+        </div>
     </div>
 
 </body>
