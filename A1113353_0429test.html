@@ -61,21 +61,51 @@
             border-radius: 20px; /* 圓角設置 */
             word-wrap: break-word; /* 確保長字串換行 */
             overflow: hidden; /* 隱藏溢出內容，確保圓角效果 */
-            display: flex;
-            align-items: center; /* 垂直對齊 */
-            justify-content: space-between; /* 左右對齊 */
         }
-        .idea-box img {
-            width: 150px; /* 設定圖片寬度 */
-            height: auto; /* 保持圖片比例 */
-            border-radius: 20px; /* 圓角效果 */
-            margin-left: 10px; /* 與文字間距 */
+        .idea-box h3, .idea-box p {
+            border-radius: 20px; /* 內部內容圓角 */
+            padding: 10px; /* 增加內部文字間距 */
+            background-color: #FFFFFF; /* 文字背景顏色 */
         }
     </style>
 </head>
 <body>
 
-    <div class="idea-box">
+    <div class="description-box">
+        <h2>高雄市65-69歲人口互動地圖</h2> 
+    </div>
+    <div class="iframe-box">
+        <h3>分析原因</h3> 
+        <p>
+            掌握人口分布特徵： 分析該年齡段的總人口和性別比例，有助於了解不同區域的人口結構特徵。
+            性別差異的影響： 不同性別的人口分布可能反映某些社會現象。
+            老年福利與資源分配： 瞭解65-69歲人口的分布，可以幫助政府更合理地分配資源，例如長照中心、醫療設施和交通服務。
+            性別需求的差異化規劃： 男性與女性可能在健康需求、生活方式和社區活動參與方面有不同的偏好，這需要針對性別特性進行政策設計。
+        </p>
+    </div>
+    <div class="iframe-box">
+       <iframe src="https://plotdb.io/v/chart/37351" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    </div>
+    <div class="iframe-box">
+       <iframe src="https://plotdb.io/v/chart/37455" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    </div>
+    <div class="iframe-box">
+       <iframe src="https://plotdb.io/v/chart/37444" width="100%" height="600px" allowfullscreen="true" frameborder="0"></iframe>
+    </div>
+    <div class="iframe-box">
+        <h3>結論</h3> 
+        <p>
+            南高雄的醫療和交通建設完善，對老年人口的吸引力較大，說明老年人口的分布與基礎設施資源的豐富程度高度相關。
+            偏遠地區因資源相對不足，老年人口選擇居住的意願較低，可能促使這些地區的人口進一步減少。
+            偏遠地區需要更多針對性的政策支持，例如：
+            定期的志工探訪和關懷服務，以彌補親屬或社會資源缺乏的不足。
+            增建老人長照中心，提供基礎的生活照顧與醫療支持，減少因居住偏遠而導致的安全風險。
+            人口密集的都市地區：
+            需要更高效的醫療資源分配，例如規劃照護專車路線，緩解交通壓力，並提高老年人就醫的便利性。
+            偏遠地區老年人口可能面臨更多的生活安全問題，例如獨居老人缺乏及時協助；都市地區的老年人可能更重視健康維護，對醫療與運動設施的需求更高。
+        </p>
+    </div>
+   <div class="idea-box">
         <div>
             <h3>集點子</h3>
             <p>
