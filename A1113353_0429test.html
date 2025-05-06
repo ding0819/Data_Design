@@ -1,114 +1,104 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高雄市65-69歲人口分析</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高雄市65-69歲人口分析</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+    }
 
-        .description-box,
-        .iframe-box,
-        .idea-box {
-            position: relative;
-            width: 50%;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border: 18px solid #C7D6DB;
-            background-color: #FFFFFF;
-            padding: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            box-sizing: border-box;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
+    .description-box,
+    .iframe-box,
+    .idea-box {
+      position: relative;
+      width: 50%;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border: 18px solid #C7D6DB;
+      background-color: #FFFFFF;
+      padding: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
 
-        .description-box {
-            text-align: center;
-            background-color: #C7D6DB;
-            border: none;
-        }
+    .description-box {
+      text-align: center;
+      background-color: #C7D6DB;
+      border: none;
+    }
 
-        .iframe-box iframe {
-            width: 100%;
-            height: 600px;
-            border-radius: 15px;
-            border: none;
-            display: block;
-        }
+    .iframe-box iframe {
+      width: 100%;
+      height: 600px;
+      border-radius: 15px;
+      border: none;
+      display: block;
+    }
 
-        .iframe-box h3,
-        .iframe-box p,
-        .idea-box h3,
-        .idea-box p {
-            background-color: transparent;
-            border-radius: 0;
-            padding: 0;
-            margin: 0 0 10px 0;
-        }
+    .iframe-box h3,
+    .iframe-box p,
+    .idea-box h3,
+    .idea-box p {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
 
-        .idea-box-content {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .idea-box-content {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .idea-box img {
-            width: 45%;
-            border-radius: 20px;
-            object-fit: cover;
-            display: block;
-            margin: auto 0;
-            transition: filter 0.3s ease;
-        }
+    .idea-box img {
+      width: 45%;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      margin: auto 0;
+    }
 
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #C7D6DB;
-            margin: 10px 0;
-        }
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #C7D6DB;
+      margin: 10px 0;
+    }
 
-        @media (max-width: 768px) {
-            .description-box,
-            .iframe-box,
-            .idea-box {
-                width: 90%;
-            }
+    @media (max-width: 768px) {
+      .description-box,
+      .iframe-box,
+      .idea-box {
+        width: 90%;
+      }
 
-            .idea-box-content {
-                flex-direction: column;
-                align-items: center;
-            }
+      .idea-box-content {
+        flex-direction: column;
+        align-items: center;
+      }
 
-            .idea-box img {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
+      .idea-box img {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
 
-        /* 點擊浮動動畫效果 */
-        .clicked-effect {
-            animation: floatUp 0.3s ease-out forwards;
-            box-shadow: 0 0 0 5px #A3B6C5, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
-        }
-
-        @keyframes floatUp {
-            0% {
-                transform: translateY(0px);
-            }
-            100% {
-                transform: translateY(-8px);
-            }
-        }
-    </style>
+    /* 點擊後的浮動與邊框變色效果 */
+    .active-box {
+      transform: scale(1.02);
+      border-color: #A3B6C5 !important;
+    }
+  </style>
 </head>
 <body>
     <div class="description-box">
