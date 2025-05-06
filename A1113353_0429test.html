@@ -26,7 +26,7 @@
             font-size: 16px;
             font-weight: bold;
             box-sizing: border-box;
-            transition: background-color 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .description-box {
@@ -66,13 +66,7 @@
             object-fit: cover;
             display: block;
             margin: auto 0;
-            transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .idea-box img:hover {
-            transform: scale(1.05);
-            filter: brightness(0.95) sepia(0.3) hue-rotate(180deg) saturate(1.5);
-            box-shadow: 0 4px 20px rgba(163, 182, 197, 0.8);
+            transition: filter 0.3s ease;
         }
 
         hr {
@@ -99,33 +93,22 @@
                 margin: 10px 0;
             }
         }
+
+        /* 點擊浮動動畫效果 */
+        .clicked-effect {
+            animation: floatUp 0.3s ease-out forwards;
+            box-shadow: 0 0 0 5px #A3B6C5, 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-8px);
+            }
+        }
     </style>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const boxes = document.querySelectorAll('.idea-box, .iframe-box');
-
-            boxes.forEach(box => {
-                box.addEventListener('click', function () {
-                    this.style.backgroundColor = '#A3B6C5';
-                    setTimeout(() => {
-                        this.style.backgroundColor = '#FFFFFF';
-                    }, 2000);
-                });
-            });
-
-            const images = document.querySelectorAll('.idea-box img');
-            images.forEach(img => {
-                img.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    this.style.filter = 'brightness(0.85) sepia(0.2) hue-rotate(160deg) saturate(1.3)';
-                    setTimeout(() => {
-                        this.style.filter = '';
-                    }, 2000);
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="description-box">
@@ -200,5 +183,32 @@
             <img src="集點子.jpg" alt="相關圖片">
         </div>
     </div>
+
+    <!-- ✅ 新增互動腳本 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const boxes = document.querySelectorAll('.idea-box, .iframe-box');
+
+            boxes.forEach(box => {
+                box.addEventListener('click', function () {
+                    box.classList.add('clicked-effect');
+                    setTimeout(() => {
+                        box.classList.remove('clicked-effect');
+                    }, 2000);
+                });
+            });
+
+            const images = document.querySelectorAll('.idea-box img');
+            images.forEach(img => {
+                img.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    this.style.filter = 'brightness(0.85) sepia(0.2) hue-rotate(160deg) saturate(1.3)';
+                    setTimeout(() => {
+                        this.style.filter = '';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
