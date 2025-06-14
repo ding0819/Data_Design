@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>高雄市65-69歲人口分析</title>
   <style>
     body {
@@ -21,7 +21,7 @@
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      border: 18px solid #A3B6C5; /* 初始外框顏色 */
+      border: 18px solid #A3B6C5; /* 初始邊框顏色 */
       background-color: #FFFFFF;
       padding: 20px;
       font-size: 16px;
@@ -30,14 +30,8 @@
       transition: all 0.3s ease;
     }
 
-    .iframe-box:hover,
-    .idea-box:hover {
-      transform: scale(1.02);
-      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
     .iframe-box.toggled {
-      border-color: #D1DFE8; /* 點擊後的顏色 */
+      border-color: #6F97A3; /* 點擊後的邊框顏色 */
     }
 
     .description-box {
@@ -46,48 +40,33 @@
       border: none;
     }
 
+    .description-box h2,
+    .description-box p {
+      color: white; /* 標題與說明文字顏色 */
+    }
+
     .iframe-box iframe {
       display: block;
       margin: 0 auto;
       border-radius: 15px;
       border: none;
+      width: 100%;
+      height: 636px;
     }
 
-    .iframe-box h3,
-    .iframe-box p,
-    .idea-box h3,
-    .idea-box p {
-      background-color: transparent;
-      border-radius: 0;
-      padding: 0;
-      margin: 0 0 10px 0;
-    }
-
-    .idea-box-content {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .idea-box img {
-      width: 45%;
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-      margin: auto 0;
-    }
-
-    hr {
-      border: none;
-      height: 1px;
-      background-color: #C7D6DB;
-      margin: 10px 0;
+    /* 用於捕捉點擊事件的透明浮層 */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: transparent;
     }
 
     @media (max-width: 850px) {
       .iframe-box iframe {
-        width: 100% !important;
         height: auto;
       }
     }
@@ -97,16 +76,6 @@
       .iframe-box,
       .idea-box {
         width: 95%;
-      }
-
-      .idea-box-content {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .idea-box img {
-        width: 100%;
-        margin: 10px 0;
       }
     }
   </style>
@@ -119,19 +88,20 @@
   </div>
 
   <div class="iframe-box" id="toggleBox">
-    <iframe title="資料設計思考0603"
-            width="800"
-            height="636"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
-            frameborder="0"
-            allowfullscreen="true">
+    <div class="overlay" id="overlay"></div> <!-- 點擊用的浮層 -->
+    <iframe
+      title="資料設計思考0603"
+      src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
+      allowfullscreen="true">
     </iframe>
   </div>
 
   <script>
     const box = document.getElementById('toggleBox');
-    box.addEventListener('click', () => {
-      box.classList.toggle('toggled'); // 開關class，切換顏色
+    const overlay = document.getElementById('overlay');
+
+    overlay.addEventListener('click', () => {
+      box.classList.toggle('toggled');
     });
   </script>
 
