@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雨量與測站各項圖表</title>
+    <title>雨量與測站圖表</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,8 +13,7 @@
         }
 
         .description-box,
-        .iframe-box,
-        .idea-box {
+        .iframe-box {
             position: relative;
             width: 90%;
             max-width: 860px;
@@ -30,8 +29,7 @@
             transition: all 0.3s ease;
         }
 
-        .iframe-box:hover,
-        .idea-box:hover {
+        .iframe-box:hover {
             border-color: #A3B6C5;
             transform: scale(1.02);
             box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
@@ -48,69 +46,24 @@
             color: white;
         }
 
-        .iframe-box iframe {
-            display: block;
-            margin: 0 auto;
+        .iframe-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iframe-container iframe {
+            width: 800px;
+            height: 636px;
             border-radius: 15px;
             border: none;
-            width: 100%;
-            height: 836px;
-        }
-
-        .iframe-box h3,
-        .iframe-box p,
-        .idea-box h3,
-        .idea-box p {
-            background-color: transparent;
-            border-radius: 0;
-            padding: 0;
-            margin: 0 0 10px 0;
-        }
-
-        .idea-box-content {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .idea-box img {
-            width: 45%;
-            border-radius: 20px;
-            object-fit: cover;
-            display: block;
-            margin: auto 0;
-        }
-
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #AFC8DA;
-            margin: 10px 0;
         }
 
         @media (max-width: 850px) {
-            .iframe-box iframe {
-                width: 100% !important;
-                height: auto;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .description-box,
-            .iframe-box,
-            .idea-box {
-                width: 95%;
-            }
-
-            .idea-box-content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .idea-box img {
+            .iframe-container iframe {
                 width: 100%;
-                margin: 10px 0;
+                height: auto;
+                aspect-ratio: 800 / 636;
             }
         }
     </style>
@@ -123,14 +76,14 @@
     </div>
 
     <div class="iframe-box">
-        <iframe 
-            title="資料設計思考0603"
-            width="800"
-            height="636"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
-            frameborder="0"
-            allowfullscreen="true">
-        </iframe>
+        <div class="iframe-container">
+            <iframe 
+                title="資料設計思考0603"
+                src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
+                frameborder="0"
+                allowfullscreen="true">
+            </iframe>
+        </div>
     </div>
 
 </body>
