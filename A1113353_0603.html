@@ -48,11 +48,16 @@
       margin: 10px 0;
     }
 
+    .iframe-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
     iframe {
       width: 100%;
       height: 600px;
       border: none;
-      border-radius: 15px;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -74,12 +79,14 @@
     <h1>雨量與測站圖表</h1>
     <p>以下圖表展示雨量與測站各項圖表，透過 Power BI 資料視覺化方式呈現。</p>
     <hr>
-    <iframe title="資料設計思考0603" 
-      width="600" height="373.5" 
-      src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" 
-      frameborder="0" 
-      allowFullScreen="true">
-    </iframe>
+    <div class="iframe-wrapper">
+      <iframe title="資料設計思考0603" 
+        width="600" height="373.5" 
+        src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" 
+        frameborder="0" 
+        allowFullScreen="true">
+      </iframe>
+    </div>
   </div>
 
 </body>
