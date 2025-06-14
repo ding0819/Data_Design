@@ -1,130 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高雄市65-69歲人口分析</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高雄市65-69歲人口分析</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #A3B6C5; /* 初始顏色 */
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease; /* 背景顏色切換動畫 */
+    }
 
-        .description-box,
-        .iframe-box,
-        .idea-box {
-            position: relative;
-            width: 90%;
-            max-width: 860px; /* 800 iframe + padding/margin */
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            border: 18px solid #C7D6DB;
-            background-color: #FFFFFF;
-            padding: 20px;
-            font-size: 16px;
-            font-weight: bold;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+    .description-box,
+    .iframe-box,
+    .idea-box {
+      position: relative;
+      width: 90%;
+      max-width: 860px;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border: 18px solid #C7D6DB;
+      background-color: #FFFFFF;
+      padding: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
 
-        .iframe-box:hover,
-        .idea-box:hover {
-            border-color: #A3B6C5;
-            transform: scale(1.02);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-        }
+    .iframe-box:hover,
+    .idea-box:hover {
+      border-color: #A3B6C5;
+      transform: scale(1.02);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
 
-        .description-box {
-            text-align: center;
-            background-color: #C7D6DB;
-            border: none;
-        }
+    .description-box {
+      text-align: center;
+      background-color: #C7D6DB;
+      border: none;
+    }
 
-        /* 不再限制 iframe 尺寸，讓 HTML 內的 width/height 有效 */
-        .iframe-box iframe {
-            display: block;
-            margin: 0 auto;
-            border-radius: 15px;
-            border: none;
-        }
+    .iframe-box iframe {
+      display: block;
+      margin: 0 auto;
+      border-radius: 15px;
+      border: none;
+    }
 
-        .iframe-box h3,
-        .iframe-box p,
-        .idea-box h3,
-        .idea-box p {
-            background-color: transparent;
-            border-radius: 0;
-            padding: 0;
-            margin: 0 0 10px 0;
-        }
+    .iframe-box h3,
+    .iframe-box p,
+    .idea-box h3,
+    .idea-box p {
+      background-color: transparent;
+      border-radius: 0;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
 
-        .idea-box-content {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .idea-box-content {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .idea-box img {
-            width: 45%;
-            border-radius: 20px;
-            object-fit: cover;
-            display: block;
-            margin: auto 0;
-        }
+    .idea-box img {
+      width: 45%;
+      border-radius: 20px;
+      object-fit: cover;
+      display: block;
+      margin: auto 0;
+    }
 
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #C7D6DB;
-            margin: 10px 0;
-        }
+    hr {
+      border: none;
+      height: 1px;
+      background-color: #C7D6DB;
+      margin: 10px 0;
+    }
 
-        @media (max-width: 850px) {
-            .iframe-box iframe {
-                width: 100% !important;
-                height: auto;
-            }
-        }
+    @media (max-width: 850px) {
+      .iframe-box iframe {
+        width: 100% !important;
+        height: auto;
+      }
+    }
 
-        @media (max-width: 768px) {
-            .description-box,
-            .iframe-box,
-            .idea-box {
-                width: 95%;
-            }
+    @media (max-width: 768px) {
+      .description-box,
+      .iframe-box,
+      .idea-box {
+        width: 95%;
+      }
 
-            .idea-box-content {
-                flex-direction: column;
-                align-items: center;
-            }
+      .idea-box-content {
+        flex-direction: column;
+        align-items: center;
+      }
 
-            .idea-box img {
-                width: 100%;
-                margin: 10px 0;
-            }
-        }
-    </style>
+      .idea-box img {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
-<body>
+<body onclick="document.body.style.backgroundColor = '#6F97A3'">
 
-    <div class="description-box">
-        <h2>高雄市65-69歲人口分析</h2>
-        <p>以下圖表展示高雄市65至69歲人口的分佈狀況，透過 Power BI 資料視覺化方式呈現。</p>
-    </div>
+  <div class="description-box">
+    <h2>高雄市65-69歲人口分析</h2>
+    <p>以下圖表展示高雄市65至69歲人口的分佈狀況，透過 Power BI 資料視覺化方式呈現。</p>
+  </div>
 
-    <div class="iframe-box">
-        <iframe title="資料設計思考0603"
-                width="800"
-                height="636"
-                src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
-                frameborder="0"
-                allowfullscreen="true">
-        </iframe>
-    </div>
+  <div class="iframe-box">
+    <iframe title="資料設計思考0603"
+            width="800"
+            height="636"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
+            frameborder="0"
+            allowfullscreen="true">
+    </iframe>
+  </div>
 
 </body>
 </html>
