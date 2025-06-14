@@ -12,16 +12,28 @@
       padding: 0;
     }
 
-    /* 置中標題 */
+    /* 外框包住標題 */
+    .title-box {
+      max-width: 800px;
+      width: 90%;
+      margin: 20px auto 10px auto; /* 上下間距 */
+      padding: 10px 20px;
+      border: 1.5px solid #A3B6C5;  /* 細邊框，灰色 */
+      border-radius: 12px;
+      text-align: center;
+      box-sizing: border-box;
+      background-color: #f9f9f9; /* 可以讓框更有層次（可選） */
+    }
+
     h1 {
       color: #333333;
-      text-align: center;      /* 置中 */
-      margin: 20px 0 15px 0;   /* 上下間距 */
+      margin: 0; /* 讓 h1 不多出額外間距 */
+      font-weight: 600;
     }
 
     .outer-box {
-      width: 90%;               /* 寬度改小一些 */
-      max-width: 800px;         /* 最大寬度縮小 */
+      width: 90%;
+      max-width: 800px;
       margin: 20px auto;
       background-color: #AFC8DA;
       padding: 18px;
@@ -73,6 +85,10 @@
     }
 
     @media (max-width: 768px) {
+      .title-box, .outer-box {
+        width: 95%;
+      }
+
       .outer-box {
         padding: 10px;
       }
@@ -91,8 +107,9 @@
 </head>
 <body>
 
-  <!-- 把 h1 從外框中挪到外面，但也可以放裡面，這邊是照你原本結構 -->
-  <h1>雨量與測站圖表</h1>
+  <div class="title-box">
+    <h1>雨量與測站圖表</h1>
+  </div>
 
   <div class="outer-box">
     <div class="iframe-box">
