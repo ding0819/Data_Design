@@ -12,9 +12,16 @@
       padding: 0;
     }
 
+    /* 置中標題 */
+    h1 {
+      color: #333333;
+      text-align: center;      /* 置中 */
+      margin: 20px 0 15px 0;   /* 上下間距 */
+    }
+
     .outer-box {
-      width: 95%;
-      max-width: 1200px; /* 調大外框最大寬度 */
+      width: 90%;               /* 寬度改小一些 */
+      max-width: 800px;         /* 最大寬度縮小 */
       margin: 20px auto;
       background-color: #AFC8DA;
       padding: 18px;
@@ -38,11 +45,6 @@
       overflow: hidden;
     }
 
-    h1 {
-      margin-top: 0;
-      color: #333333;
-    }
-
     p {
       margin: 5px 0 15px;
       color: #666666;
@@ -62,10 +64,10 @@
     }
 
     iframe {
-      width: 100%;       /* 改為 100% 寬度，撐滿父元素 */
-      max-width: 900px;  /* 最大寬度限制，可調整 */
+      width: 100%;
+      max-width: 900px;
       height: auto;
-      aspect-ratio: 16 / 9; /* 固定16:9比例 */
+      aspect-ratio: 16 / 9;
       border: none;
       display: block;
     }
@@ -80,7 +82,7 @@
       }
 
       iframe {
-        max-width: 100%; /* 手機時寬度撐滿 */
+        max-width: 100%;
         aspect-ratio: 16 / 9;
         height: auto;
       }
@@ -88,7 +90,10 @@
   </style>
 </head>
 <body>
+
+  <!-- 把 h1 從外框中挪到外面，但也可以放裡面，這邊是照你原本結構 -->
   <h1>雨量與測站圖表</h1>
+
   <div class="outer-box">
     <div class="iframe-box">
       <p>以下圖表展示雨量與測站各項圖表，透過 Power BI 資料視覺化方式呈現。</p>
