@@ -1,88 +1,79 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雨量與測站圖表</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFFFFF;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>雨量與測站圖表</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-        .description-box,
-        .iframe-box {
-            width: 90%;
-            max-width: 860px;
-            margin: 20px auto;
-            border-radius: 15px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            background-color: #FFFFFF;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
+    .description-box {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 15px;
+      background-color: #AFC8DA;
+      padding: 20px 10px;
+      color: white;
+    }
 
-        .iframe-box {
-            border: 18px solid #AFC8DA;
-            text-align: center; /* 讓 iframe 置中 */
-        }
+    .iframe-box {
+      display: inline-block;
+      border: 18px solid #AFC8DA;
+      border-radius: 15px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
 
-        .iframe-box:hover {
-            border-color: #A3B6C5;
-            transform: scale(1.02);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-        }
+    .iframe-box:hover {
+      border-color: #A3B6C5;
+      transform: scale(1.02);
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
 
-        .description-box {
-            text-align: center;
-            background-color: #AFC8DA;
-            border: none;
-        }
+    iframe {
+      width: 1000px;
+      height: 830px;
+      border: none;
+      border-radius: 0; /* 不要額外內圓角干擾外框 */
+      display: block;
+    }
 
-        .description-box h2,
-        .description-box p {
-            color: white;
-            margin: 0;
-        }
+    @media (max-width: 1020px) {
+      iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1000 / 830;
+      }
 
-        iframe {
-            border: none;
-            border-radius: 15px;
-            width: 100%;
-            height: 1000px; /* 加大高度避免被裁切 */
-            max-width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .iframe-box {
-                padding: 10px;
-                border-width: 10px;
-            }
-
-            iframe {
-                height: auto;
-                aspect-ratio: 4 / 3;
-            }
-        }
-    </style>
+      .iframe-box {
+        width: 100%;
+        max-width: 1000px;
+        margin: auto;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="description-box">
-        <h2>雨量與測站圖表</h2>
-        <p>以下圖表展示雨量與測站各項圖表，透過 Power BI 資料視覺化方式呈現。</p>
-    </div>
+  <div class="description-box">
+    <h2>雨量與測站圖表</h2>
+    <p>以下圖表展示雨量與測站各項圖表，透過 Power BI 資料視覺化方式呈現。</p>
+  </div>
 
-    <div class="iframe-box">
-        <iframe 
-            title="資料設計思考0603"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
-            allowfullscreen="true">
-        </iframe>
-    </div>
+  <div class="iframe-box">
+    <iframe 
+      title="資料設計思考0603"
+      src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D"
+      allowfullscreen="true">
+    </iframe>
+  </div>
 
 </body>
 </html>
