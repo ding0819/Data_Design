@@ -7,10 +7,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #A3B6C5; /* 初始顏色 */
+      background-color: #FFFFFF;
       margin: 0;
       padding: 0;
-      transition: background-color 0.5s ease; /* 背景顏色切換動畫 */
     }
 
     .description-box,
@@ -22,7 +21,7 @@
       margin: 20px auto;
       border-radius: 15px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      border: 18px solid #C7D6DB;
+      border: 18px solid #A3B6C5; /* 初始外框顏色 */
       background-color: #FFFFFF;
       padding: 20px;
       font-size: 16px;
@@ -33,9 +32,12 @@
 
     .iframe-box:hover,
     .idea-box:hover {
-      border-color: #A3B6C5;
       transform: scale(1.02);
       box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .iframe-box.toggled {
+      border-color: #6F97A3; /* 點擊後的顏色 */
     }
 
     .description-box {
@@ -109,14 +111,14 @@
     }
   </style>
 </head>
-<body onclick="document.body.style.backgroundColor = '#6F97A3'">
+<body>
 
   <div class="description-box">
     <h2>高雄市65-69歲人口分析</h2>
     <p>以下圖表展示高雄市65至69歲人口的分佈狀況，透過 Power BI 資料視覺化方式呈現。</p>
   </div>
 
-  <div class="iframe-box">
+  <div class="iframe-box" id="toggleBox">
     <iframe title="資料設計思考0603"
             width="800"
             height="636"
@@ -125,6 +127,13 @@
             allowfullscreen="true">
     </iframe>
   </div>
+
+  <script>
+    const box = document.getElementById('toggleBox');
+    box.addEventListener('click', () => {
+      box.classList.toggle('toggled'); // 開關class，切換顏色
+    });
+  </script>
 
 </body>
 </html>
