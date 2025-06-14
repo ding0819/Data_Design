@@ -13,12 +13,12 @@
     }
 
     .outer-box {
-      width: 90%;
-      max-width: 1080px;
+      width: 95%;
+      max-width: 1200px; /* 調大外框最大寬度 */
       margin: 20px auto;
-      background-color: #AFC8DA; /* 外框色 */
-      padding: 18px; /* 模擬邊框 */
-      border-radius: 20px; /* 外框圓角 */
+      background-color: #AFC8DA;
+      padding: 18px;
+      border-radius: 20px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
@@ -62,8 +62,10 @@
     }
 
     iframe {
-      width: 600px;
-      height: 373.5px;
+      width: 100%;       /* 改為 100% 寬度，撐滿父元素 */
+      max-width: 900px;  /* 最大寬度限制，可調整 */
+      height: auto;
+      aspect-ratio: 16 / 9; /* 固定16:9比例 */
       border: none;
       display: block;
     }
@@ -78,9 +80,9 @@
       }
 
       iframe {
-        width: 100% !important;
-        height: auto !important;
+        max-width: 100%; /* 手機時寬度撐滿 */
         aspect-ratio: 16 / 9;
+        height: auto;
       }
     }
   </style>
@@ -96,7 +98,6 @@
         <iframe title="資料設計思考0603" 
           width="600" height="373.5" 
           src="https://app.powerbi.com/view?r=eyJrIjoiNDJlNTJiNWMtZjhmOS00N2ZhLWJlYzUtMGUwOWYyMWZiNTQ2IiwidCI6IjVhNDg0OTUzLTc3ZWYtNDJlYy05MGNmLTJmNGUxMDM3ZmZjNyIsImMiOjEwfQ%3D%3D" 
-          frameborder="0" 
           allowFullScreen="true">
         </iframe>
       </div>
